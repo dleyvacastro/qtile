@@ -1,0 +1,2 @@
+firefox &
+/usr/bin/diodon &
