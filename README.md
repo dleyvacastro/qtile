@@ -16,7 +16,7 @@
 # Dependences
 Required apps and defaults of my preferences linked by key binds:
 ## Terminal Emulator
-Terminal used: [Konsole] (https://konsole.kde.org/)
+Terminal used: [Konsole](https://konsole.kde.org/)
 Font: Victor Mono Nerd Font
 Colorscheme: Shiny-konsole
 ## Fonts
