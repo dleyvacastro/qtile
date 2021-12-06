@@ -1,24 +1,23 @@
 # Qtile
 
 # Table of Contetents
-- [Dependences and Defaults]
+- [Dependences and Defaults](#dependences)
     - [Terminal Emulator](#terminal-emulator)
     - [Fonts](#fonts)
-        - [VictorMono]
-        - [UbuntuMono]
+        - VictorMono
+        - UbuntuMono
     - [Shell](#shell)
     - [Nitrgoen](#nitrgoen)
     - [LXAppearance](#lxappearance)
     - [Rofi](#rofi)
-    -
 - [Keys]
 
-# Dependences
+# Dependences 
 Required apps and defaults of my preferences linked by key binds:
 ## Terminal Emulator
 Terminal used: [Konsole](https://konsole.kde.org/) \
 Font: Victor Mono Nerd Font \
-Colorscheme: Shiny-konsole \
+Colorscheme: Shiny-konsole
 ## Fonts
 [Nerd Fonts](https://www.nerdfonts.com/#home) are required. Several special symbols are used among the config.
 There are two main fonts used:
