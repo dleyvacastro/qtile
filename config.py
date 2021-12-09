@@ -9,13 +9,13 @@ from typing import List  # noqa: F401
 import os
 import subprocess
 # Config Imports
-from themes import material_ocean as colors
+from settings.themes import material_ocean as colors
 from settings.default_globals import *
 from settings.keys import keys
 
 
 @hook.subscribe.startup_once
-def startup():
+def autostart():
     xrandr = 'xrandr --output HDMI-1 --above eDP-1'
     latam_keyboard = 'setxkbmap latam'
     nitrogen = 'nitrogen --restore'
@@ -27,12 +27,8 @@ def startup():
     subprocess.run(diodon, shell=True)
     subprocess.run(picom, shell=True)
     subprocess.run(browser + ' &', shell=True)
-    #home = os.path.join(os.path.expanduser('~'), ".config", "qtile")
-    #subprocess.call([os.path.join(home, 'autostart.sh')])
-
-    # lazy.spawn('diodon')
-    # lazy.spawn('WhatSie')
-    # lazy.spawn('Firefox')
+    # home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    # subprocess.call([home])
 
 
 def base(fg='text', bg='dark'):
@@ -53,7 +49,7 @@ def powerline(fg="light", bg="dark"):
 
 
 def separator():
-    return widget.Sep(**base(), linewidth=0, padding=5)
+    return widget.Sep(**base(), linewidth=1, padding=5)
 
 
 def icon(fg='text', bg='dark', fontsize=16, text="?"):
@@ -64,6 +60,21 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
         text=text,
         padding=3
     )
+
+
+def workspace():
+    return [widget.GroupBox(font=font,
+                            **base(bg='dark'),
+                            fontsize=16,
+                            highlight_method='block',
+                            inactive='505050',
+                            ),
+            widget.CurrentScreen(
+        font=font, active_text=" 蘒 ", inactive_text=" 﨡 ", **base(bg='dark')),
+
+        separator(),
+        widget.WindowName(
+        format='{name}', **base(bg='dark', fg='active'), max_chars=20)]
 
 
 def MusicPayer(fb='text', bg='dark'):
@@ -141,7 +152,7 @@ layouts = [
     layout.RatioTile(**layout_conf),
     # layout.Bsp(**layout_conf),
     # layout.Matrix(**layout_conf),
-    # layout.Tile(),
+    # layout.Tile(**layout_conf),
 
     # layout.TreeTab(
     #    font="Ubuntu",
@@ -178,19 +189,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(font=font,
-                                **base(bg='dark'),
-                                fontsize=16,
-                                highlight_method='block',
-                                inactive='505050',
-                                ),
-                widget.CurrentScreen(
-                    font=font, active_text=" 蘒 ", inactive_text=" 﨡 ", **base(bg='dark')),
-
-
-                widget.Prompt(),
-                widget.WindowName(
-                    max_chars=15, format='{name}', **base(bg='dark', fg='text')),
+                *workspace(),
                 powerline('color4', 'dark'),
 
 
@@ -260,16 +259,7 @@ screens = [
     ),
     Screen(
         top=bar.Bar([
-            widget.GroupBox(font=font,
-                            **base(bg='dark'),
-                            fontsize=16,
-                            highlight_method='block'
-                            ),
-
-            widget.CurrentScreen(
-                    **base(bg='dark'), font=font, active_text=" 蘒 ", inactive_text=" 﨡 "),
-            widget.WindowName(
-                max_chars=15, format='{name}', **base(bg='dark')),
+            *workspace(),
             powerline('color2', 'dark'),
             widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
             widget.CurrentLayout(**base(bg='color2'),

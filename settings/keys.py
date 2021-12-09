@@ -4,6 +4,11 @@ from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 from settings.default_globals import mod, browser, terminal
 
+
+def open_pages(pages: str):
+    return f'{browser} --new-window {pages}'
+
+
 key_list = [
     # Window Managment
     # # # Control
@@ -23,6 +28,8 @@ key_list = [
     ([mod, "shift"], "j", lazy.layout.shuffle_down(),),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
     # # Re-Sizing
+    ([mod], "i", lazy.layout.grow()),
+    ([mod, "shift"], "i", lazy.layout.shrink()),
     ([mod, "control"], "h", lazy.layout.grow_left()),
     ([mod, "control"], "l", lazy.layout.grow_right()),
     ([mod, "control"], "j", lazy.layout.grow_down()),
@@ -46,10 +53,10 @@ key_list = [
     ([mod], "space", lazy.spawn('rofi -show drun')),
     (["control"], "space", lazy.spawn('rofi -show')),
     ([mod], "b", lazy.spawn(browser)),
-    ([mod, "shift"], "a", lazy.spawn(
-        'brave-browser --new-window https://e-aulas.urosario.edu.co/ lofi.cafe https://es.symbolab.com/')),
-    ([mod, "shift"], "a", lazy.spawn(
-        'brave-browser --new-window https://www3.animeflv.net/ https://www.mangatigre.com/ https://manganyaa.com/es https://www.youtube.com/')),
+    ([mod, "shift"], "e", lazy.spawn(open_pages(
+        'https://e-aulas.urosario.edu.co/ lofi.cafe https://es.symbolab.com/'))),
+    ([mod, "shift"], "a", lazy.spawn(open_pages(
+        'https://www3.animeflv.net/ https://www.mangatigre.com/ https://manganyaa.com/es https://www.youtube.com/'))),
     (["control", "mod1"], "t", lazy.spawn(terminal)),
     # # Media
     ([], "XF86AudioRaiseVolume", lazy.spawn('amixer -q set Master 5%+')),
