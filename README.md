@@ -87,44 +87,44 @@ In order to set the spotify controls and names in the bar is needed to install a
 # Keys
 | Keys                 | Action                                    |
 | -------------------- | ----------------------------------------- |
-| mod4+w               | Close window                              |
-| mod4+control+q       | Shutdown Qtile                            |
-| mod4+mod1+r          | Restart Qtile                             |
-| mod4+mod1+q          | Shutdown PC                               |
-| mod4+h               | Focus the left window                     |
-| mod4+l               | Focus the right window                    |
-| mod4+j               | Focus the down window                     |
-| mod4+k               | Focus the up window                       |
-| mod4+c               | Focus the next window                     |
-| mod4+shift+h         | Swap with the left window                 |
-| mod4+shift+l         | Swap with the right window                |
-| mod4+shift+j         | Swap with the down window                 |
-| mod4+shift+k         | Swap with the up window                   |
-| mod4+i               | Grow actual window                        |
-| mod4+shift+i         | Shink actual window                       |
-| mod4+control+h       | Grow left                                 |
-| mod4+control+l       | Grow right                                |
-| mod4+control+j       | Grow down                                 |
-| mod4+control+k       | Grow up                                   |
-| mod4+Tab             | Next Layout                               |
-| mod4+shift+f         | Toggle Floating                           |
-| mod4+o               | Maximize window acording to layout config |
-| mod4+shift+space     | Flip windows - Monad                      |
-| mod4+n               | Normalize widnow sizes                    |
-| mod4+m               | Set actual window to fullscreen           |
-| mod4+mod1+j          | Go to screen 1                            |
-| mod4+mod1+k          | Go to screen 2                            |
-| mod4+space           | Open an app                               |
+| super+w              | Close window                              |
+| super+control+q      | Shutdown Qtile                            |
+| super+Alt+r         | Restart Qtile                             |
+| super+Alt+q         | Shutdown PC                               |
+| super+h              | Focus the left window                     |
+| super+l              | Focus the right window                    |
+| super+j              | Focus the down window                     |
+| super+k              | Focus the up window                       |
+| super+c              | Focus the next window                     |
+| super+shift+h        | Swap with the left window                 |
+| super+shift+l        | Swap with the right window                |
+| super+shift+j        | Swap with the down window                 |
+| super+shift+k        | Swap with the up window                   |
+| super+i              | Grow actual window                        |
+| super+shift+i        | Shink actual window                       |
+| super+control+h      | Grow left                                 |
+| super+control+l      | Grow right                                |
+| super+control+j      | Grow down                                 |
+| super+control+k      | Grow up                                   |
+| super+Tab            | Next Layout                               |
+| super+shift+f        | Toggle Floating                           |
+| super+o              | Maximize window acording to layout config |
+| super+shift+space    | Flip windows - Monad                      |
+| super+n              | Normalize widnow sizes                    |
+| super+m              | Set actual window to fullscreen           |
+| super+Alt+j         | Go to screen 1                            |
+| super+Alt+k         | Go to screen 2                            |
+| super+space          | Open an app                               |
 | control+space        | Show opened apps                          |
-| mod4+b               | Browser                                   |
-| mod4+shift+e         | Study                                     |
-| mod4+shift+a         | Anime                                     |
-| control+mod1+t       | Terminal                                  |
+| super+b              | Browser                                   |
+| super+shift+e        | Study                                     |
+| super+shift+a        | Anime                                     |
+| control+Alt+t       | Terminal                                  |
 | XF86AudioRaiseVolume | Volume Up                                 |
 | XF86AudioLowerVolume | Volume Down                               |
 | XF86AudioPlay        | Spotify Play/Pause                        |
 | XF86AudioNext        | Spotify Next                              |
 | XF86AudioPrev        | Spotify Prev                              |
 | Print                | Full ScreenShot                           |
-| shift+mod4+s         | Section ScreenShot                        |
-| mod4+v               | Diodon                                    |
+| shift+super+s        | Section ScreenShot                        |
+| super+v              | Diodon                                    |
