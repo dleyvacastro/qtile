@@ -76,7 +76,7 @@ configuration {
     font: "VictorMono Nerd Font 11";
     theme: "material-ocean";
     show-icons: true;
-}" >> config.rasi
+    }" >> config.rasi
     
     ```
 
