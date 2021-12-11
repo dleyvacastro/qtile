@@ -11,7 +11,7 @@ def open_pages(pages: str):
 
 key_list = [
     # Window Managment
-    # # # Control
+    # # Control
     ([mod], "w", lazy.window.kill()),
     ([mod, "control"], "q", lazy.shutdown()),
     ([mod, "mod1"], "r", lazy.restart()),
