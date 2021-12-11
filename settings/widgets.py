@@ -2,6 +2,13 @@ from libqtile import widget, qtile
 from settings.default_globals import font
 from settings.themes import material_ocean as colors
 
+widget_defaults = dict(
+    font=font,
+    fontsize=12,
+    padding=3,
+)
+extension_defaults = widget_defaults.copy()
+
 
 def base(fg='text', bg='dark'):
     return {
@@ -42,11 +49,18 @@ def workspace():
                             inactive='505050',
                             ),
             widget.CurrentScreen(
-        font=font, active_text=" 蘒 ", inactive_text=" 﨡 ", **base(bg='dark')),
-
+                **widget_defaults,
+                active_text=" 蘒 ",
+                inactive_text=" 﨡 ",
+                **base(bg='dark')
+    ),
         separator(),
         widget.WindowName(
-        format='{name}', **base(bg='dark', fg='active'), max_chars=20)]
+                format='{name}',
+                **base(bg='dark', fg='active'),
+                max_chars=20
+    )
+    ]
 
 
 def MusicPayer(fb='text', bg='dark'):
@@ -128,19 +142,20 @@ primary_widgets = [
         color_inactive='#000000',
         color_active='#000000',
         color_break='dcfb7f'
-
     ),
 
     powerline('color2', 'color3'),
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
     widget.CurrentLayout(**base(bg='color2'),
-                         font=font, padding=5),
+                         **widget_defaults,
+                         ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
     icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
-                 format='%d/%m/%Y - %H:%M ', font=font),
+                 format='%d/%m/%Y - %H:%M ',
+                 **widget_defaults),
 
     powerline('dark', 'color1'),
     widget.Systray(background=colors['dark'], padding=5),
@@ -155,12 +170,14 @@ secondary_widgets = [
     powerline('color2', 'dark'),
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
     widget.CurrentLayout(**base(bg='color2'),
-                         font=font, padding=5),
+                         **widget_defaults,
+                         ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
     icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
-                 format='%d/%m/%Y - %H:%M ', font=font)
+                 format='%d/%m/%Y - %H:%M ',
+                 **widget_defaults)
 
 ]
