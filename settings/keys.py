@@ -59,8 +59,8 @@ key_list = [
         'https://www3.animeflv.net/ https://www.mangatigre.com/ https://manganyaa.com/es https://www.youtube.com/'))),
     (["control", "mod1"], "t", lazy.spawn(terminal)),
     # # Media
-    ([], "XF86AudioRaiseVolume", lazy.spawn('amixer -q set Master 5%+')),
-    ([], "XF86AudioLowerVolume", lazy.spawn('amixer -q set Master 5%-')),
+    ([], "XF86AudioRaiseVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%')),
+    ([], "XF86AudioLowerVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')),
     ([], 'XF86AudioPlay', lazy.spawn(
         'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause'
     )),

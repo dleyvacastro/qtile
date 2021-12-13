@@ -17,19 +17,19 @@ from settings.screens import screens
 
 @hook.subscribe.startup_once
 def autostart():
-    xrandr = 'xrandr --output HDMI-1 --above eDP-1'
-    latam_keyboard = 'setxkbmap latam'
-    nitrogen = 'nitrogen --restore'
-    diodon = '/usr/bin/diodon &'
-    picom = 'picom -f &'
-    subprocess.run(xrandr, shell=True)
-    subprocess.run(latam_keyboard, shell=True)
-    subprocess.run(nitrogen, shell=True)
-    subprocess.run(diodon, shell=True)
-    subprocess.run(picom, shell=True)
-    subprocess.run(browser + ' &', shell=True)
-    # home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    # subprocess.call([home])
+    # xrandr = 'xrandr --output HDMI1 --above eDP1'
+    # latam_keyboard = 'setxkbmap latam'
+    # nitrogen = 'nitrogen --restore'
+    # diodon = '/usr/bin/diodon &'
+    # picom = 'picom -f &'
+    # subprocess.run(xrandr, shell=True)
+    # subprocess.run(latam_keyboard, shell=True)
+    # subprocess.run(nitrogen, shell=True)
+    # subprocess.run(diodon, shell=True)
+    # subprocess.run(picom, shell=True)
+    # subprocess.run(browser + ' &', shell=True)
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
 
 
 g = [
@@ -37,7 +37,7 @@ g = [
     Group("   ", Match(wm_class=["Firefox", "Brave-browser"])),
     Group("   "),
     Group("   ", Match(
-        wm_class=["WhatSie", "discord", "TelegramDesktop"]),
+        wm_class=["WhatSie", "discord", "TelegramDesktop", "whatsdesk"]),
         layout='monadwide'
     ),
     Group("   ", Match(wm_class=["spotify"])),

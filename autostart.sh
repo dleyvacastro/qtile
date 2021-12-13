@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-xrandr --output HDMI-1 --above eDP-1 &
+xrandr --output HDMI1 --above eDP1 &
 setxkbmap latam &
+nitrogen --restore
 /usr/bin/diodon &
 picom -f &
+brave &

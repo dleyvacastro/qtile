@@ -3,7 +3,7 @@ from settings.default_globals import font
 from settings.themes import material_ocean as colors
 
 widget_defaults = dict(
-    font=font,
+    font=font+ " Bold",
     fontsize=12,
     padding=3,
 )
@@ -35,10 +35,16 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
-        font=font,
+        font=font + ' Bold',
         text=text,
         padding=3
     )
+
+def bold_font(font = font):
+    return {
+        'font':font + ' Bold',
+        'fontsize': 17
+    }
 
 
 def workspace():
@@ -74,25 +80,23 @@ def MusicPayer(fb='text', bg='dark'):
             **base(fb, bg),
             text='玲',
             padding=10,
-            font=font,
-            fontsize=17,
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[0])}
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[0])},
+            **bold_font()
+
         ),
         widget.TextBox(
             **base(fb, bg),
             text='懶',
             padding=10,
-            font=font,
-            fontsize=17,
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[1])}
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[1])},
+            **bold_font()
         ),
         widget.TextBox(
             **base(fb, bg),
             text='怜',
             padding=10,
-            font=font,
-            fontsize=17,
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[2])}
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[2])},
+            **bold_font()
         ),
 
     ]
@@ -112,7 +116,7 @@ primary_widgets = [
     *MusicPayer(bg='color4'),
     widget.Mpris2(
         **base(bg='color4'),
-        font=font,
+        font=font + " Bold",
         name='spotify',
         objname="org.mpris.MediaPlayer2.spotify",
         display_metadata=['xesam:title'],
