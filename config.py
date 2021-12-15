@@ -32,9 +32,9 @@ def autostart():
     subprocess.call([home])
 
 
-@hook.subscribe.startup_complete
-def startup_complete_tweeks():
-    subprocess.run('pactl set-sink-volume @DEFAULT_SINK@ 33% &', shell=True)
+# @hook.subscribe.startup_complete
+# def startup_complete_tweeks():
+#     subprocess.run('pactl set-sink-volume @DEFAULT_SINK@ 33% &', shell=True)
 
 
 g = [
