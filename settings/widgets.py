@@ -67,7 +67,7 @@ def workspace():
         widget.WindowName(
                 format='{name}',
                 **base(bg='dark', fg='active'),
-                max_chars=20
+                max_chars=15
     )
     ]
 
@@ -115,7 +115,7 @@ primary_widgets = [
     widget.Mpris2(
         **base(bg='color4'),
         **widget_defaults(sz=15, b=1),
-        max_chars=15,
+        max_chars=12,
         name='spotify',
         objname="org.mpris.MediaPlayer2.spotify",
         display_metadata=['xesam:title'],

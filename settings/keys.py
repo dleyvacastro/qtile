@@ -47,9 +47,10 @@ key_list = [
     ([mod], "m", lazy.window.toggle_fullscreen()),
 
     # Screen movment
-    ([mod, "mod1"], "j", lazy.to_screen(0)),
-    ([mod, "mod1"], "k", lazy.to_screen(1)),
-
+    # ([mod, "mod1"], "j", lazy.next_screen()),
+    # ([mod, "mod1"], "k", lazy.prev_screen()),
+    ([mod], "comma", lazy.next_screen()),
+    ([mod], "period", lazy.prev_screen()),
     # Apps
     ([mod], "space", lazy.spawn('rofi -show drun')),
     (["control"], "space", lazy.spawn('rofi -show')),
@@ -58,7 +59,8 @@ key_list = [
         'https://e-aulas.urosario.edu.co/ lofi.cafe https://es.symbolab.com/'))),
     ([mod, "shift"], "a", lazy.spawn(open_pages(
         'https://www3.animeflv.net/ https://www.mangatigre.com/ https://manganyaa.com/es https://www.youtube.com/'))),
-    (["control", "mod1"], "t", lazy.spawn(terminal)),
+    # (["control", "mod1"], "t", lazy.spawn(terminal)),
+    ([mod], "Return", lazy.spawn(terminal)),
     # # Media
     ([], "XF86AudioRaiseVolume", lazy.spawn(
         'pactl set-sink-volume @DEFAULT_SINK@ +5%')),

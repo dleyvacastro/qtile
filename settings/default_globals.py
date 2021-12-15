@@ -1,4 +1,4 @@
 mod = "mod4"
 browser = 'brave'
-terminal = "kitty -e fish"
+terminal = "kitty"
 font = "UbuntuMono Nerd Font"
