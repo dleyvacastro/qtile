@@ -6,4 +6,3 @@ cbatticon &
 nitrogen --restore
 /usr/bin/diodon &
 picom -f &
-brave &
