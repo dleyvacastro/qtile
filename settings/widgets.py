@@ -2,12 +2,11 @@ from libqtile import widget, qtile
 from settings.default_globals import font
 from settings.themes import material_ocean as colors
 
-widget_defaults = dict(
-    font=font+ " Bold",
-    fontsize=12,
-    padding=3,
-)
-extension_defaults = widget_defaults.copy()
+# widget_defaults = dict(
+#     font=font + " Bold",
+#     fontsize=12,
+#     padding=3,
+# )
 
 
 def base(fg='text', bg='dark'):
@@ -40,22 +39,26 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
         padding=3
     )
 
-def bold_font(font = font):
+
+def widget_defaults(font=font, sz=12, b=0, padding=3):
+    if b:
+        font += ' Bold'
     return {
-        'font':font + ' Bold',
-        'fontsize': 17
+        'font': font,
+        'fontsize': sz,
+        'padding': padding
     }
 
 
 def workspace():
     return [widget.GroupBox(font=font,
-                            **base(bg='dark'),
                             fontsize=16,
+                            **base(bg='dark'),
                             highlight_method='block',
                             inactive='505050',
                             ),
             widget.CurrentScreen(
-                **widget_defaults,
+                **widget_defaults(),
                 active_text=" 蘒 ",
                 inactive_text=" 﨡 ",
                 **base(bg='dark')
@@ -79,24 +82,21 @@ def MusicPayer(fb='text', bg='dark'):
         widget.TextBox(
             **base(fb, bg),
             text='玲',
-            padding=10,
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[0])},
-            **bold_font()
+            **widget_defaults(sz=17, b=1, padding=10)
 
         ),
         widget.TextBox(
             **base(fb, bg),
             text='懶',
-            padding=10,
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[1])},
-            **bold_font()
+            **widget_defaults(sz=17, b=1, padding=10)
         ),
         widget.TextBox(
             **base(fb, bg),
             text='怜',
-            padding=10,
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(events[2])},
-            **bold_font()
+            **widget_defaults(sz=17, b=1, padding=10)
         ),
 
     ]
@@ -108,20 +108,18 @@ primary_widgets = [
 
 
     widget.PulseVolume(**base(bg='color4'),
-                       padding=5,
+                       **widget_defaults(sz=15, b=1, padding=5),
                        fmt='墳 {}',
-                       fontsize=15,
-                       font=font
                        ),
     *MusicPayer(bg='color4'),
     widget.Mpris2(
         **base(bg='color4'),
-        font=font + " Bold",
+        **widget_defaults(sz=15, b=1),
+        max_chars=15,
         name='spotify',
         objname="org.mpris.MediaPlayer2.spotify",
         display_metadata=['xesam:title'],
         stop_pause_text='',
-        fontsize=15,
         scroll_wait_intervals=2000
     ),
 
@@ -134,24 +132,43 @@ primary_widgets = [
     # ),
     powerline('color3', 'color4'),
     # widget.Notify(**base(bg='color3'), font=font, max_chars=20),
-    widget.Pomodoro(
+    # widget.Pomodoro(
+    #     **base(bg='color3'),
+    #     padding=17,
+    #     fontsize=18,
+    #     font=font, prefix_inactive="",
+    #     prefix_active="  ",
+    #     prefix_long_break=" 鬒 ",
+    #     prefix_paused="  ",
+    #     prefix_break="  ",
+    #     color_inactive='#000000',
+    #     color_active='#000000',
+    #     color_break='dcfb7f'
+    # ),
+
+    icon(bg="color3", text=' '),
+    widget.CheckUpdates(
         **base(bg='color3'),
-        padding=17,
-        fontsize=18,
-        font=font, prefix_inactive="",
-        prefix_active="  ",
-        prefix_long_break=" 鬒 ",
-        prefix_paused="  ",
-        prefix_break="  ",
-        color_inactive='#000000',
-        color_active='#000000',
-        color_break='dcfb7f'
+        colour_have_updates=colors['text'],
+        colour_no_updates=colors['text'],
+        no_update_string='0',
+        display_format='{updates}',
+        update_interval=1800,
+        custom_command='checkupdates',
+        **widget_defaults(sz=17, b=1)
+    ),
+    widget.Sep(**base(bg='color3'), linewidth=1, padding=5),
+    icon(bg='color3', text='﬙'),
+    widget.CPU(
+        **base(bg='color3'),
+        **widget_defaults(b=1),
+        format='{freq_current}GHz - {load_percent}%'
     ),
 
     powerline('color2', 'color3'),
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
     widget.CurrentLayout(**base(bg='color2'),
-                         **widget_defaults,
+                         **widget_defaults(b=1),
                          ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
@@ -159,14 +176,13 @@ primary_widgets = [
 
     widget.Clock(**base(bg='color1'),
                  format='%d/%m/%Y - %H:%M ',
-                 **widget_defaults),
+                 **widget_defaults(b=1)),
 
     powerline('dark', 'color1'),
     widget.Systray(background=colors['dark'], padding=5),
     widget.QuickExit(default_text=" ⏻ ",
                      countdown_format='[{}]', background=colors['dark'],
-                     fontsize=15,
-                     font=font
+                     **widget_defaults(sz=15)
                      ),
 ]
 secondary_widgets = [
@@ -174,7 +190,7 @@ secondary_widgets = [
     powerline('color2', 'dark'),
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
     widget.CurrentLayout(**base(bg='color2'),
-                         **widget_defaults,
+                         **widget_defaults(b=1)
                          ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
@@ -182,6 +198,8 @@ secondary_widgets = [
 
     widget.Clock(**base(bg='color1'),
                  format='%d/%m/%Y - %H:%M ',
-                 **widget_defaults)
+                 **widget_defaults(b=1))
 
 ]
+
+extension_defaults = widget_defaults().copy()
