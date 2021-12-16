@@ -34,6 +34,7 @@ def autostart():
 
 # @hook.subscribe.startup_complete
 # def startup_complete_tweeks():
+#     subprocess.run('kill kdeconnect-app', shell=True)
 #     subprocess.run('pactl set-sink-volume @DEFAULT_SINK@ 33% &', shell=True)
 
 
@@ -47,7 +48,8 @@ g = [
     ),
     Group("   ", Match(wm_class=["spotify"])),
     Group("   "),
-    Group("   ", Match(wm_class=["zoom"]))
+    Group("   ", Match(wm_class=["zoom"])),
+    # Group("7", Match(wm_class=['kdeconnect-app']))
 ]
 groups = g + [Group(i) for i in [
     "7", "8", "9",

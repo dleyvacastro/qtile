@@ -179,11 +179,12 @@ primary_widgets = [
                  **widget_defaults(b=1)),
 
     powerline('dark', 'color1'),
-    widget.Systray(background=colors['dark'], padding=4, icon_size=15)
+    widget.Systray(background=colors['dark'], padding=4, icon_size=15),
     # widget.QuickExit(default_text=" ⏻ ",
     #                  countdown_format='[{}]', background=colors['dark'],
     #                  **widget_defaults(sz=15)
     #                  ),
+    separator()
 ]
 secondary_widgets = [
     *workspace(),

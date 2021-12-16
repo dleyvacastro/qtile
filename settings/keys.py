@@ -13,6 +13,7 @@ key_list = [
     # Window Managment
     # # Control
     ([mod], "w", lazy.window.kill()),
+    ([mod, "shift"], "w", lazy.spawn('xkill')),
     ([mod, "control"], "q", lazy.shutdown()),
     ([mod, "mod1"], "r", lazy.restart()),
     ([mod, "mod1"], "q", lazy.spawn(
