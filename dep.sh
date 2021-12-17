@@ -1,55 +1,56 @@
-pacman -S cbatticon
-pacman -S cmatrix
-pacman -S diodon
-pacman -S discord
-pacman -S fish
-pacman -S git
-pacman -S github-cli
-pacman -S gparted
-pacman -S grub-customizer
-pacman -S grub-theme-cyberre
-pacman -S hollywood
-pacman -S htop
-pacman -S kdeconnect
-pacman -S kitty
-pacman -S lightdm
-pacman -S lightdm-gtk-greeter
-pacman -S lightdm-gtk-greeter-settings
-pacman -S lightdm-slick-greeter
-pacman -S lightdm-webkit-theme-aether
-pacman -S lightdm-webkit2-greeter
-pacman -S lightdm-webkit2-theme-glorious
-pacman -S lsd
-pacman -S lxappearance
-pacman -S neofetch
-pacman -S neovim
-pacman -S nerd-fonts-ubuntu-mono
-pacman -S nerd-fonts-victor-mono
-pacman -S network-manager-applet
-pacman -S networkmanager
-pacman -S nitrogen
-pacman -S nodejs
-pacman -S notepadqq
-pacman -S notification-daemon
-pacman -S noto-fonts
-pacman -S npm
-pacman -S papirus-icon-theme
-pacman -S pavucontrol
-pacman -S picom
-pacman -S python-pip
-pacman -S ranger
-pacman -S rofi
-pacman -S ubberband
-pacman -S ruby
-pacman -S snapd
-pacman -S spotifyd
-pacman -S sqlite
-pacman -S starship
-pacman -S telegram-desktop
-pacman -S vlc
-pacman -S volumeicon
-pacman -S xclip
-pacman -S yaourt
-pacman -S yay
-pacman -S zoom
-pacman -S zsh
+pacman -Ss cbatticon --noconfirm
+pacman -Ss cmatrix --noconfirm
+pacman -Ss diodon --noconfirm
+pacman -Ss discord --noconfirm
+pacman -Ss fish --noconfirm
+pacman -Ss git --noconfirm
+pacman -Ss github-cli --noconfirm
+pacman -Ss gparted --noconfirm
+pacman -Ss grub-customizer --noconfirm
+pacman -Ss grub-theme-cyberre --noconfirm
+pacman -Ss hollywood --noconfirm
+pacman -Ss htop --noconfirm
+pacman -Ss kdeconnect --noconfirm
+pacman -Ss kitty --noconfirm
+pacman -Ss lightdm --noconfirm
+pacman -Ss lightdm-gtk-greeter --noconfirm
+pacman -Ss lightdm-gtk-greeter-settings --noconfirm
+pacman -Ss lightdm-slick-greeter --noconfirm
+pacman -Ss lightdm-webkit-theme-aether --noconfirm
+pacman -Ss lightdm-webkit2-greeter --noconfirm
+pacman -Ss lightdm-webkit2-theme-glorious --noconfirm
+pacman -Ss lsd --noconfirm
+pacman -Ss lxappearance --noconfirm
+pacman -Ss neofetch --noconfirm
+pacman -Ss neovim --noconfirm
+pacman -Ss nerd-fonts-ubuntu-mono --noconfirm
+pacman -Ss nerd-fonts-victor-mono --noconfirm
+pacman -Ss network-manager-applet --noconfirm
+pacman -Ss networkmanager --noconfirm
+pacman -Ss nitrogen --noconfirm
+pacman -Ss nodejs --noconfirm
+pacman -Ss notepadqq --noconfirm
+pacman -Ss notification-daemon --noconfirm
+pacman -Ss noto-fonts --noconfirm
+pacman -Ss npm --noconfirm
+pacman -Ss papirus-icon-theme --noconfirm
+pacman -Ss pavucontrol --noconfirm
+pacman -Ss picom --noconfirm
+pacman -Ss python-pip --noconfirm
+pacman -Ss ranger --noconfirm
+pacman -Ss rofi --noconfirm
+pacman -Ss ubberband --noconfirm
+pacman -Ss ruby --noconfirm
+pacman -Ss snapd --noconfirm
+pacman -Ss spotifyd --noconfirm
+pacman -Ss sqlite --noconfirm
+pacman -Ss starship --noconfirm
+pacman -Ss telegram-desktop --noconfirm
+pacman -Ss vlc --noconfirm
+pacman -Ss volumeicon --noconfirm
+pacman -Ss xclip --noconfirm
+pacman -Ss yaourt --noconfirm
+pacman -Ss yay --noconfirm
+pacman -Ss zoom --noconfirm
+pacman -Ss zsh --noconfirm
+pacman -Ss  --noconfirm
