@@ -41,11 +41,12 @@ def autostart():
 g = [
     # Group("   "),
     Group("   ", Match(wm_class=["Firefox", "Brave-browser"])),
-    Group("   "),
-    Group("   ", Match(
-        wm_class=["WhatSie", "discord", "TelegramDesktop", "whatsdesk"]),
-        layout='monadwide'
-    ),
+    Group("   ", layout='monadtall'),
+    Group("   ",
+          Match(wm_class=["WhatSie", "discord",
+                "TelegramDesktop", "whatsdesk"]),
+          layout='monadwide'
+          ),
     Group("   ", Match(wm_class=["spotify"])),
     Group("   "),
     Group("   ", Match(wm_class=["zoom"])),
