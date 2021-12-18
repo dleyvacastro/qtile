@@ -175,7 +175,7 @@ primary_widgets = [
     icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
-                 format='%d/%m/%Y - %H:%M ',
+                 format='%d/%m/%Y - %I:%M %p ',
                  **widget_defaults(b=1)),
 
     powerline('dark', 'color1'),
@@ -198,8 +198,9 @@ secondary_widgets = [
     icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
-                 format='%d/%m/%Y - %H:%M ',
-                 **widget_defaults(b=1))
+                 format='%d/%m/%Y - %I:%M %p ',
+                 **widget_defaults(b=1)),
+    # widget.Sep(**base(bg='color1'), linewidth=1, padding=5)
 
 ]
 
