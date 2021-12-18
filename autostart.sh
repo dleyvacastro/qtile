@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Display config
-xrandr --output HDMI1 --above eDP1 &
+xrandr --output HDMI1 --mode 1360x768 --above eDP1 &
 # Keboard config: latam
 setxkbmap latam &
 # Transparency compositor
