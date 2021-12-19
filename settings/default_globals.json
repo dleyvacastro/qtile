@@ -1,6 +1,6 @@
 {
     "mod": "mod4",
-    "browser": "firefox",
+    "browser": "brave",
     "terminal": "kitty",
     "font": "UbuntuMono Nerd Font",
     "colors": "dracula.json"
