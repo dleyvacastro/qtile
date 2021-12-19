@@ -9,7 +9,7 @@ from typing import List  # noqa: F401
 import os
 import subprocess
 # Config Imports
-from settings.themes import material_ocean as colors
+#from settings.themes import material_ocean as colors
 from settings.default_globals import *
 from settings.keys import keys
 from settings.screens import screens

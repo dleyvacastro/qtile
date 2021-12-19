@@ -1,6 +1,6 @@
 from libqtile import widget, qtile
-from settings.default_globals import font
-from settings.themes import material_ocean as colors
+from settings.default_globals import font, colors
+#from settings.themes import material_ocean as colors
 
 # widget_defaults = dict(
 #     font=font + " Bold",
