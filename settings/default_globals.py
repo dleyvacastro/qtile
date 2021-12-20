@@ -2,9 +2,11 @@
 from os.path import isfile, join
 from os import listdir
 import json
+from random import sample
 import sys
 # from settings.themes import nord as colors
 from settings.path import def_path, themes_path
+from settings.theme_loader import load_theme
 # from settings.themes import material_ocean as colors
 
 #
@@ -21,24 +23,10 @@ def load_defaults():
     return defaults
 
 
-def load_theme(theme):
-
-    selected = join(themes_path, theme)
-    with open(selected, 'r') as f:
-        colors = json.load(f)
-    return colors
-
-
-def find_theme(l: list):
-    for i in l:
-        if i.startswith('---'):
-            return i
-    return -1
-
-
 defaults = load_defaults()
 mod = defaults["mod"]
 browser = defaults["browser"]
 terminal = defaults["terminal"]
 font = defaults["font"]
+# random_cs()
 colors = load_theme(defaults["colors"])
