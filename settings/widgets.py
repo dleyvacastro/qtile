@@ -56,6 +56,7 @@ def workspace():
                             **base(bg='dark'),
                             highlight_method='block',
                             inactive='505050',
+                            disable_drag=True
                             ),
             widget.CurrentScreen(
                 **widget_defaults(),
