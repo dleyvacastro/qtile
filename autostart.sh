@@ -13,3 +13,4 @@ cbatticon &
 # Startup Apps
 /usr/bin/diodon &
 kdeconnect-indicator &
+rambox &

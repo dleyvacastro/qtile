@@ -44,8 +44,7 @@ g = [
     Group("   ", layout='monadtall'),
     Group("   ",
           Match(wm_class=["WhatSie", "discord",
-                "TelegramDesktop", "whatsdesk"]),
-          layout='monadwide'
+                "TelegramDesktop", "whatsdesk", "rambox"])
           ),
     Group("   ", Match(wm_class=["spotify"])),
     Group("   "),
@@ -66,8 +65,8 @@ for i, group in enumerate(groups):
     ])
 layout_conf = {
     'border_focus': colors['focus'][0],
-    'border_width': 2,
-    'margin': 4
+    'border_width': 1,
+    'margin': 3
 }
 
 layouts = [

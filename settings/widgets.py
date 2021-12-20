@@ -19,7 +19,8 @@ def base(fg='text', bg='dark'):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="",  # Icon: nf-oct-triangle_left
+        # text="",  # Icon: nf-oct-triangle_left
+        text="",
         fontsize=37,
         font=font,
         padding=-3
