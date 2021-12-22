@@ -10,6 +10,8 @@ nitrogen --restore
 # Systray icons
 nm-applet &
 cbatticon &
+# Theme loader
+python ~/.config/apthemes/ap_loader.py
 # Startup Apps
 /usr/bin/diodon &
 kdeconnect-indicator &
