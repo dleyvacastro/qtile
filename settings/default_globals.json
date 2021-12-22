@@ -3,5 +3,5 @@
     "browser": "brave",
     "terminal": "kitty",
     "font": "UbuntuMono Nerd Font",
-    "colors": "dracula.json"
+    "colors": "nord-wave.json"
 }

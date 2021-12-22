@@ -13,6 +13,7 @@ import subprocess
 from settings.default_globals import *
 from settings.keys import keys
 from settings.screens import screens
+from settings.theme_loader import switch_theme, random_cs
 
 
 @hook.subscribe.startup_once
@@ -30,6 +31,11 @@ def autostart():
     # subprocess.run(browser + ' &', shell=True)
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
+
+
+@hook.subscribe.shutdown
+def randomize_cs_at_startup():
+    switch_theme(random_cs())
 
 
 # @hook.subscribe.startup_complete

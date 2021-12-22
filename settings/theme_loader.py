@@ -30,7 +30,10 @@ def dict_enum(l: list) -> dict:
     return {i: l[i] for i in range(len(l))}
 
 
-def switch_theme(theme: str, file: dict) -> None:
+def switch_theme(theme: str, file: dict = {}) -> None:
+    if not file:
+        file = get_json_file(def_path)
+
     file["colors"] = theme
     with open(def_path, 'w') as f:
         f.write(json.dumps(file, indent=4))
