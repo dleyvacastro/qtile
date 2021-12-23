@@ -6,7 +6,8 @@ setxkbmap latam &
 # Transparency compositor
 picom -f &
 # Wallpaper
-nitrogen --restore
+# nitrogen --restore
+python ~/.config/apthemes/wall_init.py
 # Systray icons
 nm-applet &
 cbatticon &

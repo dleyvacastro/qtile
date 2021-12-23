@@ -72,7 +72,7 @@ for i, group in enumerate(groups):
 layout_conf = {
     'border_focus': colors['focus'][0],
     'border_width': 1,
-    'margin': 3
+    'margin': 2
 }
 
 layouts = [
