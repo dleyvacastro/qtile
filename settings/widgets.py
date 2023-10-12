@@ -19,16 +19,16 @@ def base(fg='text', bg='dark'):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        # text="",  # Icon: nf-oct-triangle_left
-        text="",
+        text="",  # Icon: nf-oct-triangle_left
+        #text="",
         fontsize=37,
         font=font,
-        padding=-3
+        padding=0
     )
 
 
 def separator():
-    return widget.Sep(**base(), linewidth=1, padding=5)
+    return widget.Sep(**base(), linewidth=1, padding=3)
 
 
 def icon(fg='text', bg='dark', fontsize=16, text="?"):
@@ -37,11 +37,11 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
         fontsize=fontsize,
         font=font + ' Bold',
         text=text,
-        padding=3
+        padding=10
     )
 
 
-def widget_defaults(font=font, sz=12, b=0, padding=3):
+def widget_defaults(font=font, sz=12, b=0, padding=5):
     if b:
         font += ' Bold'
     return {
@@ -61,8 +61,8 @@ def workspace():
                             ),
             widget.CurrentScreen(
                 **widget_defaults(),
-                active_text=" 蘒 ",
-                inactive_text=" 﨡 ",
+                active_text="  ",
+                inactive_text="  ",
                 **base(bg='dark')
     ),
         separator(),
@@ -107,31 +107,36 @@ def MusicPayer(fb='text', bg='dark'):
 primary_widgets = [
     *workspace(),
     powerline('color4', 'dark'),
-
-
-    widget.PulseVolume(**base(bg='color4'),
-                       **widget_defaults(sz=15, b=1, padding=5),
-                       fmt='墳 {}',
-                       ),
-    *MusicPayer(bg='color4'),
+    icon(bg='color4', text='󰝚'),
     widget.Mpris2(
         **base(bg='color4'),
         **widget_defaults(sz=15, b=1),
-        max_chars=12,
+        #max_chars=20,
         name='spotify',
         objname="org.mpris.MediaPlayer2.spotify",
-        display_metadata=['xesam:title'],
-        stop_pause_text='',
-        scroll_wait_intervals=2000
+        #display_metadata=['xesam:title'],
+        paused_text='',
+        format='{xesam:title} - {xesam:artist}',
+        width=150,
+        scroll=True,
+        #scroll_interval=0.1,
+        #scroll_step=1,
+        #scroll_clear=True,
+        #scroll_fixed_width=True,
+        #scroll_delay=1,
+        #scroll_repeat=True,
+        #scroll_hide=False,
+        #scroll_chars=45,
+        #scroll_wait_intervals=200
     ),
 
-    # icon(bg="color4", text=' '),
-    # widget.Net(
-    #    **base(bg='color4'),
-    #    font=font,
-    #    fontsize=15,
-    #    format='Claro Caremonda: {down}↓↑{up}'
-    # ),
+    #icon(bg="color4", text=' '),
+    #widget.Net(
+    #   **base(bg='color4'),
+    #   font=font,
+    #   fontsize=15,
+    #   format='Claro Caremonda: {down}↓↑{up}'
+    #),
     powerline('color3', 'color4'),
     # widget.Notify(**base(bg='color3'), font=font, max_chars=20),
     # widget.Pomodoro(
@@ -159,12 +164,20 @@ primary_widgets = [
         custom_command='checkupdates',
         **widget_defaults(sz=17, b=1)
     ),
-    widget.Sep(**base(bg='color3'), linewidth=1, padding=5),
-    icon(bg='color3', text='﬙'),
+    widget.Sep(**base(bg='color3'), linewidth=1, padding=10),
+    icon(bg='color3', text='', ),
     widget.CPU(
         **base(bg='color3'),
         **widget_defaults(b=1),
-        format='{freq_current}GHz - {load_percent}%'
+        format='{freq_current}GHz - {load_percent}%',
+    ),
+    widget.Sep(**base(bg='color3'), linewidth=1, padding=10),
+    icon(bg='color3', text='󰧑'),
+    widget.Memory(
+        **base(bg='color3'),
+        **widget_defaults(b=1),
+        measure_mem='G',
+        format='{MemUsed: .1f}/{MemTotal: .1f} Gb',
     ),
 
     powerline('color2', 'color3'),
@@ -174,7 +187,7 @@ primary_widgets = [
                          ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
-    icon(bg="color1", fontsize=17, text=' '),
+    icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
                  format='%d/%m/%Y - %I:%M %p ',
@@ -197,7 +210,7 @@ secondary_widgets = [
                          ),
     # Icon: nf-mdi-calendar_clock
     powerline('color1', 'color2'),
-    icon(bg="color1", fontsize=17, text=' '),
+    icon(bg="color1", fontsize=17, text=' '),
 
     widget.Clock(**base(bg='color1'),
                  format='%d/%m/%Y - %I:%M %p ',

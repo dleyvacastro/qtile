@@ -78,9 +78,9 @@ key_list = [
     )),
     # # ScreenShot
     ([], "Print", lazy.spawn(
-        "scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'")),
+        "spectacle -bmc")),
     (["shift", mod], "s", lazy.spawn(
-        "scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'")),
+        "spectacle -brc")),
     ([mod], "v", lazy.spawn('/usr/bin/diodon')),
 ]
 
