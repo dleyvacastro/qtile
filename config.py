@@ -48,10 +48,7 @@ g = [
     # Group("   "),
     Group("   ", Match(wm_class=["Firefox", "Brave-browser"])),
     Group("   ", layout='monadtall'),
-    Group("   ",
-          Match(wm_class=["WhatSie", "discord",
-                "TelegramDesktop", "whatsdesk", "rambox"])
-          ),
+    Group("   "),
     Group("   ", Match(wm_class=["spotify"])),
     Group("   "),
     Group("   ", Match(wm_class=["zoom"])),
